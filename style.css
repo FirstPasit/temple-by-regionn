@@ -1,8 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url('https://img.freepik.com/free-vector/thai-traditional-art-background_8102-58.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Sarabun', sans-serif;
+}
+
 .temple {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.temple h1 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 2.5em;
+    color: #8B4513;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.temple h1::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8B4513, transparent);
+    margin: 10px auto;
+}
+
+.temple h2 {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 1.3em;
+    color: #6B4423;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
 .templeall {
@@ -10,31 +52,49 @@
     overflow: hidden;
     position: relative;
     margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .wat {
     min-width: 100%;
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.7s ease;
+    padding: 20px;
+    background: rgba(255, 252, 248, 0.9);
 }
 
 .watthai {
     flex: 1;
-    padding: 0 10px;
+    padding: 10px;
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+.watthai:hover {
+    transform: translateY(-5px);
 }
 
 .imagewatthai {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
 }
 
 .imagewatthai2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.imagewatthai:hover .imagewatthai2 {
+    transform: scale(1.1);
 }
 
 .region-title {
@@ -44,23 +104,59 @@
     transform: translateX(-50%);
     color: white;
     font-size: 1.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: 'Noto Serif Thai', serif;
+    white-space: nowrap;
 }
 
 .navigation {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .navigation button {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: none;
-    margin: 0 5px;
-    background-color: #ccc;
+    border: 2px solid #8B4513;
+    margin: 0 8px;
+    background-color: transparent;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .navigation button.active {
-    background-color: #666;
+    background-color: #8B4513;
+    transform: scale(1.2);
+}
+
+
+.wat:nth-child(1) .watthai {
+    flex: 0 0 50%;
+}
+
+.wat:nth-child(2) .watthai {
+    flex: 0 0 33.333%;
+}
+
+
+.wat:nth-child(3) .watthai {
+    flex: 0 0 25%;
+}
+
+@media (max-width: 768px) {
+    .temple h1 {
+        font-size: 2em;
+    }
+    
+    .temple h2 {
+        font-size: 1.1em;
+    }
+
+    .imagewatthai {
+        width: 250px;
+        height: 250px;
+    }
 }
